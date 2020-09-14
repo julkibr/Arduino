@@ -3,27 +3,29 @@ var board = new five.Board();
 var firebase = require("firebase");
 board.on("ready", function() {
 
-  // Create a standard `led` component instance
+  // Cria um led standard
   // Configura o Led de luz para o pino posição 12 do arduino
   var led = new five.Led(12);
   var rele = new five.Relay(8);
 
   //Passa os dados para o arduino
+  
   this.repl.inject({
       led:led,
       rele:rele
   });
   
   //Configurando com o banco de dados firebase
+  //Procure seus dados no banco de dados firebase que você criar 
   var firebaseConfig = {
-    apiKey: "AIzaSyDB9BCCL6GbuSVwWELp6hqRGGaIgJ0wg10",
-    authDomain: "iot-lampada-66ce3.firebaseapp.com",
-    databaseURL: "https://iot-lampada-66ce3.firebaseio.com",
-    projectId: "iot-lampada-66ce3",
-    storageBucket: "iot-lampada-66ce3.appspot.com",
-    messagingSenderId: "687342616810",
-    appId: "1:687342616810:web:e319d81bb2650c9fc41793",
-    measurementId: "G-T03G0L90ES"
+    apiKey: "API-KEY",
+    authDomain: "AUTH-DOMAIN",
+    databaseURL: "URL",
+    projectId: "ID",
+    storageBucket: "BUCKET",
+    messagingSenderId: "Message",
+    appId: "APP-ID",
+    measurementId: "MEASURE"
   };
   // Inicializa a Firebase
   firebase.initializeApp(firebaseConfig);
